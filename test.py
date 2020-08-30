@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt #이미지 표시
 import pytesseract  #글씨 읽기
 from picamera import PiCamera #PICAM 연결
+import time
 
 def test():
     plt.style.use('dark_background') 
@@ -10,7 +11,7 @@ def test():
     camera = PiCamera()
 
     camera.start_preview()
-    sleep(5)
+    time.sleep(5)
     camera.capture('test.png')
     camera.stop_preview()
 
