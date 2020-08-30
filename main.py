@@ -27,7 +27,7 @@ def receiveMsg():
             # 들어온 데이터를 역순으로 뒤집어 전달
             data = client_sock.recv(1024)
             if len(data) == 0: break
-            tmp = test.test()
+            tmp = test.test(is_test=False)
             client_sock.send(tmp)
         except IOError:
             print("disconnected")

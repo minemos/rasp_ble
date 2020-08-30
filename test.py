@@ -5,15 +5,16 @@ import pytesseract  #글씨 읽기
 from picamera import PiCamera #PICAM 연결
 import time
 
-def test():
+def test(is_test=True):
     plt.style.use('dark_background') 
 
-    camera = PiCamera()
+    if is_test == False:
+        camera = PiCamera()
 
-    camera.start_preview()
-    time.sleep(5)
-    camera.capture('test.png')
-    camera.stop_preview()
+        camera.start_preview()
+        time.sleep(5)
+        camera.capture('test.png')
+        camera.stop_preview()
 
     longest_text = 0
     img_ori = cv2.imread('test.png')  #이미지 로드
